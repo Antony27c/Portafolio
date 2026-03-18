@@ -51,14 +51,15 @@
             <h1>Formulario de Contacto</h1>
             <form action="#" method="post">
                 <label for="name">Nombre completo *</label>
-                <input type="text" id="name" name="name" placeholder="ej. juan perez" required>
+                <input type="text" id="name" name="name" placeholder="ej. juan perez" required minlength="2">
                 <label for="email">email *</label>
                 <input type="email" name="email" id="email" placeholder="ej. pan@gmail.com" required>
                 <label for="number">numero de telefono *</label>
-                <input type="tel" name="number" id="number" placeholder="ej. 387000000" required>
+                <input type="number" name="number" id="number" placeholder="ej. 387000000" required minlength="9">
                 <label for="mensaje">mensaje *</label>
                 <textarea name="mensaje" id="mensaje" placeholder="ej. me comunico a usted con la razon de:" required></textarea>
                 <button type="submit">Enviar</button>
+                
             </form>
 
             <div class="redes">

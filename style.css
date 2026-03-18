@@ -64,6 +64,7 @@ img{
 }
 
 
+
 #Contacto {
     max-width: 500px;
     margin: 0 auto;
@@ -80,6 +81,11 @@ form{
 }
 label{
     font-weight: bold;
+}
+input :invalid{
+    border: 2px solid #dc2626;
+    background-color: #fef2f2;
+
 }
 input, textarea{
     padding: 0.6rem;
