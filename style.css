@@ -11,12 +11,12 @@ body{
 
 }
 header{
-    background-color: #333333;
+    background-color: #333;
     color: white;
     padding: 20px;
 }
 nav{
-    background-color: #444444;
+    background-color: #444;
     padding: 10px;
 }
 nav a {
@@ -29,7 +29,7 @@ nav a:hover{
     color: yellow;
 }
 footer{
-    background-color: #444444;
+    background-color: #444;
     color: white;
     padding: 20px;
     text-align: center;
@@ -41,14 +41,83 @@ section{
     margin-bottom: 30px;
 }
 h2{
-    color:#333333
+    color:#333;
+    text-align: center;
 }
 p{
     margin-bottom: 20px;
+    text-align: center;
 }
+ul{
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
 img{
     width: 200px;
     height: 200px;
     object-fit: cover;
     border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+#Contacto {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+#Contacto{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+form{
+    display: flex;
+    flex-direction: column ;
+    gap: 0.5rem;
+}
+label{
+    font-weight: bold;
+}
+input, textarea{
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+textarea{
+    height: 120px;
+    resize: vertical;
+}
+button{
+    margin-top: 0.5rem;
+    padding: 0.7rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+button :hover{
+    background-color: #555;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.redes a {
+    color: #333;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.redes a:hover {
+    color: #888;
 }
