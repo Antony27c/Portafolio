@@ -15,39 +15,24 @@
     <nav>
         <a href="#inicio">inicio</a>
         <a href="#Aptitudes">Aptitudes</a>
-        <a href="Contacto.html">Contacto</a>
+        <a href="#Contacto">Contacto</a>
     </nav>
 
-    <main>
-        <section id="Sobre mi">
-            <h2>Sobre mi</h2>
-            <p>Estoy cursando la materia de Practicas profecionalizantes 2</p>
-            <img src="Gemini_Generated_Image_mild7mild7mild7m.png" alt="Foto de perfil">
 
-            <h2>Idiomas que estoy aprendiendo:</h2>
-
-            <ul>
-                <li>c</li>
-                <li>python</li>
-                <li>html</li>
-            </ul>
-
-        </section>
-
-        <section id="Aptitudes">
-            <h2>Aptitudes</h2>
-            <img src="WhatsApp Image 2026-01-04 at 23.56.40.jpeg" alt="yo">
-            <p>Mis mejores aptitudes</p>
-
-            <ul>
-                <li>Escuchar</li>
-                <li>Intentar hasta mejorar</li>
-                <li>Asistencia</li>
-            </ul>
-
-        </section>
-
-       
+        <section id="Contacto">
+            <h1>Formulario de Contacto</h1>
+            <form action="#" method="post">
+                <label for="name">Nombre completo *</label>
+                <input type="text" id="name" name="name" placeholder="ej. juan perez" required minlength="2">
+                <label for="email">email *</label>
+                <input type="email" name="email" id="email" placeholder="ej. pan@gmail.com" required>
+                <label for="number">numero de telefono *</label>
+                <input type="number" name="number" id="number" placeholder="ej. 387000000" required minlength="9">
+                <label for="residencia">residencia</label>
+                <input type="text" id="Lugar de residencia" name="Lugar de residencia" placeholder="Salta Capital" required minlength="5">
+                <label for="mensaje">mensaje *</label>
+                <textarea name="mensaje" id="mensaje" placeholder="ej. me comunico a usted con la razon de:" required></textarea>
+                <button type="submit">Enviar</button>
                 
             </form>
 
