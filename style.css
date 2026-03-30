@@ -82,17 +82,21 @@ form{
 label{
     font-weight: bold;
 }
-input :invalid{
+input:invalid {
     border: 2px solid #dc2626;
     background-color: #fef2f2;
 
 }
-input, textarea{
+input, textarea {
     padding: 0.6rem;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
 }
+input, textarea, select{
+    width: 100%;
+}
+
 textarea{
     height: 120px;
     resize: vertical;
@@ -126,4 +130,21 @@ button :hover{
 
 .redes a:hover {
     color: #888;
+}
+
+input:focus, textarea:focus, select:focus {
+    border: 2px solid blue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+    outline: none;
+}
+
+input:valid, textarea:valid, select:valid {
+    border: 2px solid green;
+    background-color: #f0fff0;
+}
+
+input:invalid:not(:placeholder-shown),
+textarea:invalid:not(:placeholder-shown) {
+    border: 2px solid red;
+    background-color: #fef2f2;
 }
