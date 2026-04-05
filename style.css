@@ -33,7 +33,7 @@ h3 { font-size: 1.3rem; }
 
 
 header{
-    background-color: #333;
+    background: linear-gradient(135deg, #1a1a2e, #6b21a8);
     color: white;
     padding: 2rem 4rem;
     height: 100px;
@@ -258,7 +258,7 @@ textarea:invalid:not(:placeholder-shown) {
 }
 
 footer {
-    background: var(--color-secondary);
+    background: linear-gradient(135deg, #1a1a2e, #6b21a8);
     color: rgba(255,255,255,0.75);
     padding: 2rem;
     text-align: center;
@@ -276,4 +276,54 @@ footer .redes a {
 
 footer .redes a:hover {
     color: var(--color-accent);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh;
+}
+
+header {grid-area: header; }
+.sidebar{grid-area: sidebar;}
+main{grid-area: main;}
+footer{grid-area: footer;}
+
+.sidebar{
+    background: #f1f5f9;
+    padding: 2rem 1rem;
+    border-right: 1px solid #e2e8f0;
+}
+
+.sidebar h3{
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: auto;
+    margin: 0;
+}
+
+.sidebar ul li a  {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #6b21a8;
 }
