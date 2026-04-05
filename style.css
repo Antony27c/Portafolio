@@ -1,7 +1,7 @@
 :root {
- --color-animation: #2E75B6;
---color-secondary: #1B2A4A;
---color-accent: #F59E0B;
+ --color-animation: #444;
+--color-secondary: #333;
+--color-accent: #6b21a8;
 --color-text: #334155;
 --color-bg: #F8FAFC;
 --radius: 8px;
@@ -215,4 +215,65 @@ textarea:invalid:not(:placeholder-shown) {
 .Tarjeta p {
     color: var(--color-text);
     text-align: left;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    background: linear-gradient(135deg,#1a1a2e,#6b21a8 );
+    color: white;
+    text-align: center;
+}
+
+.hero-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: white;
+}
+
+.hero-titulo {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.80);
+    text-align: center;
+    margin: 0;
+}
+
+.hero-btn{
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.hero-btn:hover{
+    background: #9333ea;
+    transform: translateY(-2px);
+}
+
+footer {
+    background: var(--color-secondary);
+    color: rgba(255,255,255,0.75);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer .redes a {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+    transition: color 0.25s ease;
+}
+
+footer .redes a:hover {
+    color: var(--color-accent);
 }
