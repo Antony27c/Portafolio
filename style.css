@@ -1,3 +1,14 @@
+:root {
+ --color-animation: #2E75B6;
+--color-secondary: #1B2A4A;
+--color-accent: #F59E0B;
+--color-text: #334155;
+--color-bg: #F8FAFC;
+--radius: 8px;
+--shadow: 0 2px 8px rgba(0,0,0,0.1);
+--font-main : "DM Sans", "Segoe UI", Arial, sans-serif;
+--font-titulo: "Playwrite DK Uloopet Guides", cursive;
+}
 
 *{
     box-sizing: border-box;
@@ -5,11 +16,18 @@
     padding: 0;
 }
 body{
-    font-family: Arial, sans-serif;
+    font-family: var(--font-main);
     font-size: 16px;
     line-height: 1.6;
-
+    color :var(--color-text);
+    background: var(--color-bg);
 }
+
+h1 { font-size: 2.5rem; font-family: var(--font-main); }
+h2 { font-size: 1.8rem; font-family: var(--font-main); }
+h3 { font-size: 1.3rem; }
+
+
 header{
     background-color: #333;
     color: white;
@@ -64,7 +82,6 @@ img{
 }
 
 
-
 #Contacto {
     max-width: 500px;
     margin: 0 auto;
@@ -82,11 +99,7 @@ form{
 label{
     font-weight: bold;
 }
-input:invalid {
-    border: 2px solid #dc2626;
-    background-color: #fef2f2;
 
-}
 input, textarea {
     padding: 0.6rem;
     border: 1px solid #ccc;
@@ -148,3 +161,4 @@ textarea:invalid:not(:placeholder-shown) {
     border: 2px solid red;
     background-color: #fef2f2;
 }
+
