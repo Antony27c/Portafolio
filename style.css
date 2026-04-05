@@ -188,13 +188,12 @@ textarea:invalid:not(:placeholder-shown) {
 }
 
 .Tarjetas{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
 }
 
 .Tarjeta{
-    flex: 1 1 280px;
     background: white;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
