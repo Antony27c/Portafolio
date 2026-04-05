@@ -326,3 +326,76 @@ footer{grid-area: footer;}
 .sidebar ul li a:hover {
     color: #6b21a8;
 }
+
+.layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+}
+
+.sidebar {
+    display: none;
+}
+
+header {
+    padding: 0 1rem;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+nav {
+    flex-wrap: wrap;
+}
+
+main {
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .layout {
+        grid-template-columns: 220px 1fr;
+        grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+
+        .sidebar {
+            display :block;
+        }
+
+        header {
+            flex-wrap: wrap;
+            height: auto;
+            padding: 1rem 2rem;
+        }
+    }
+
+
+    .sidebar {
+    display: block;
+    }
+
+    header {
+    flex-direction: row;
+    height: 64px;
+    padding: 0  2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .layout {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1440px) {
+    .layout {
+        max-width: 1600px;
+    }
+}
