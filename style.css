@@ -31,20 +31,41 @@ h3 { font-size: 1.3rem; }
 header{
     background-color: #333;
     color: white;
-    padding: 20px;
+    padding: 2rem 4rem;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-nav{
-    background-color: #444;
-    padding: 10px;
-}
-nav a {
+header .logo h1{
+    font-size: 1.5rem;
     color: white;
+}
+
+header .logo p{
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.65);
+    text-align: left;
+}
+
+nav{
+    display: flex;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: rgba(255,255,255,0.80);
     text-decoration: none;
-    margin-right: 15px;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius);
+    transition: background 0.25s ease, color 0.25s ease;
 
 }
+
 nav a:hover{
-    color: yellow;
+    background: #4a0080;
+    color: white;
 }
 footer{
     background-color: #444;
