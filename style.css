@@ -1,13 +1,16 @@
 :root {
- --color-animation: #444;
---color-secondary: #333;
---color-accent: #6b21a8;
---color-text: #334155;
---color-bg: #F8FAFC;
---radius: 8px;
---shadow: 0 2px 8px rgba(0,0,0,0.1);
---font-main : "DM Sans", "Segoe UI", Arial, sans-serif;
---font-titulo: "Playwrite DK Uloopet Guides", cursive;
+  --color-accent: #6b21a8;
+  --color-accent-hover: #9333ea;
+  --color-text: #334155;
+  --color-text-muted: #64748b;
+  --color-bg: #F8FAFC;
+  --color-surface: #f1f5f9;
+  --color-border: #e2e8f0;
+  --radius: 12px;
+  --radius-pill: 20px;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --font-main: "DM Sans", sans-serif;
+  --font-titulo: "Syne", sans-serif;
 }
 
 html {
