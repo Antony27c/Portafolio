@@ -19,13 +19,13 @@ Es un sitio web personal creado porque estabamos armando nuestro portafolio. Inc
 
 ## Capturas de pantallas 
 ### Mobile (393px)
-![mobile](capturas/mobile.png)
+![mobile](capturas/mobile.png.png)
 
 ### Tablet (820px)
-![tablet](capturas/tablet.png)
+![tablet](capturas/tablet.png.png)
 
 ### Computadora (1024px)
-![computadora](capturas/computadora.png)
+![computadora](capturas/computadora.png.png)
 
 ## Ruta de instalacion de Git
 c:\Program files\git\cmd\git.exe
