@@ -9,7 +9,23 @@ Es un sitio web personal creado porque estabamos armando nuestro portafolio. Inc
 
 ## Tecnologias Usadas
 - HTML5
-- CSS3
+- CSS
+- Flexbox
+- CSS Grid
+- Responsive Design
+
+##  Link del sitio
+[Ver sitio en vivo](https://antony27c.github.io/Portafolio/)
+
+## Capturas de pantallas 
+### Mobile (393px)
+![Mobile](capturas/mobile.png)
+
+### Tablet (820px)
+![Tablet](capturas/tablet.png)
+
+### Computadora (1024px)
+![Computadora](captura/computadora.png)
 
 ## Ruta de instalacion de Git
 c:\Program files\git\cmd\git.exe
