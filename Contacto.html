@@ -1,68 +1,123 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi pagina</title>
-<header>
-  <div class="logo">
-    <h1>Chocobar Antonio</h1>
-    <p>Estudiante de la tecnicatura superior de analista de sistemas y desarrollador de software</p>
-  </div>
-  <nav>
-    <a href="index.html#Inicio">Inicio</a>
-    <a href="index.html#Aptitudes">Aptitudes</a>
-    <a href="index.html#Proyectos">Proyectos</a>
-    <a href="Contacto.html">Contacto</a>
-  </nav>
-</header>
+    <meta name="description" content="Contacto de Antonio Chocobar — desarrollador de software en Salta, Argentina.">
+    <meta name="theme-color" content="#0a0814">
+    <title>Contacto · Antonio Chocobar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="vendor/animate.min.css">
+    <link rel="stylesheet" href="vendor/aos.css">
+    <link rel="stylesheet" href="style.css?v=3">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+                }
+                document.documentElement.setAttribute("data-theme", theme);
+                var lang = localStorage.getItem("lang") || "es";
+                document.documentElement.setAttribute("lang", lang);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#contacto" data-i18n="skip">Saltar al contenido</a>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Antonio Chocobar">
+            <svg class="logo" viewBox="0 0 84 96" aria-hidden="true">
+                <polygon points="42,4 80,26 80,70 42,92 4,70 4,26" fill="none" stroke="currentColor" stroke-width="4"></polygon>
+                <text x="42" y="58" text-anchor="middle" font-size="32" font-family="Inter, sans-serif" font-weight="600" fill="currentColor">A</text>
+            </svg>
+        </a>
+        <nav class="nav" id="site-nav" data-nav>
+            <ol>
+                <li><a href="index.html#sobre-mi"><span>01.</span> <em data-i18n="nav.about">Sobre mí</em></a></li>
+                <li><a href="index.html#experiencia"><span>02.</span> <em data-i18n="nav.experience">Experiencia</em></a></li>
+                <li><a href="index.html#proyectos"><span>03.</span> <em data-i18n="nav.projects">Proyectos</em></a></li>
+                <li><a href="Contacto.html"><span>04.</span> <em data-i18n="nav.contact">Contacto</em></a></li>
+            </ol>
+            <a class="btn-outline" href="https://github.com/Antony27c" target="_blank" rel="noopener" data-i18n="nav.resume">GitHub</a>
+            <div class="header-tools">
+                <div class="lang-switch" role="group" aria-label="Idioma">
+                    <button type="button" class="lang-btn is-active" data-lang-btn="es" aria-pressed="true" aria-label="Español">
+                        <svg class="flag" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="36" height="24" rx="3" fill="#74ACDF"/>
+                            <rect y="8" width="36" height="8" fill="#fff"/>
+                            <circle cx="18" cy="12" r="3.1" fill="#F6B40E"/>
+                            <circle cx="18" cy="12" r="1.55" fill="#85340A"/>
+                            <circle cx="18" cy="12" r="1" fill="#F6B40E"/>
+                        </svg>
+                        ES
+                    </button>
+                    <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false" aria-label="English">
+                        <svg class="flag" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="36" height="24" rx="3" fill="#fff"/>
+                            <rect x="15" width="6" height="24" fill="#CE1124"/>
+                            <rect y="9" width="36" height="6" fill="#CE1124"/>
+                        </svg>
+                        EN
+                    </button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Cambiar tema">
+                    <i class="fa-solid fa-moon" data-theme-icon></i>
+                </button>
+            </div>
+        </nav>
+        <button type="button" class="icon-btn menu-btn" data-menu-toggle aria-expanded="false" aria-controls="site-nav">
+            <span class="sr-only" data-i18n="nav.menu">Menú</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
 
-        <section id="Contacto">
-            <h1>Formulario de Contacto</h1>
-            <form action="https://formspree.io/f/xjgplbrb" method="POST">
-                <label for="name">Nombre completo *</label>
-                <input type="text" id="name" name="name" placeholder="ej. juan perez" required minlength="3">
-                <label for="email">email *</label>
-                <input type="email" name="email" id="email" placeholder="ej. pan@gmail.com" required>
-                <label for="number">numero de telefono *</label>
-                <input type="tel" name="telefono" id="number" placeholder="ej. 387000000" pattern="[0-9]{7,15}" required >
-                <label for="residencia">residencia *</label>
-                <input type="text" id="residencia" name="residencia" placeholder="Salta Capital" required minlength="5">
-                <label for="motivo">Motivo de contacto *</label>
+    <main>
+        <section id="contacto" class="section contact-block contact-page">
+            <p class="contact-kicker"><span>05.</span> <em data-i18n="contact.eyebrow">¿Y ahora?</em></p>
+            <h2 data-i18n="contact.title">Decime hola</h2>
+            <p data-i18n="contact.lead">¿Tenés un proyecto, una idea o una vacante? Escribime y te respondo apenas vea el mensaje.</p>
+            <form class="contact-form" action="https://formspree.io/f/xjgplbrb" method="POST">
+                <label for="name" data-i18n="form.name">Nombre completo *</label>
+                <input type="text" id="name" name="name" data-i18n-placeholder="form.namePh" placeholder="Ej. Juan Pérez" required minlength="3">
+                <label for="email" data-i18n="form.email">Email *</label>
+                <input type="email" id="email" name="email" data-i18n-placeholder="form.emailPh" placeholder="ej. hola@correo.com" required>
+                <label for="number" data-i18n="form.phone">Teléfono *</label>
+                <input type="tel" id="number" name="telefono" data-i18n-placeholder="form.phonePh" placeholder="ej. 387000000" pattern="[0-9]{7,15}" required>
+                <label for="residencia" data-i18n="form.city">Residencia *</label>
+                <input type="text" id="residencia" name="residencia" data-i18n-placeholder="form.cityPh" placeholder="Salta Capital" required minlength="5">
+                <label for="motivo" data-i18n="form.reason">Motivo *</label>
                 <select id="motivo" name="motivo" required>
-                    <option value="">-- Seleccioná una opción --</option>
-                    <option value="consulta">Consulta general</option>
-                    <option value="Contacto">Contacto</option>
-                    <option value="otro">Otro</option>
+                    <option value="" data-i18n="form.reasonEmpty">-- Seleccioná una opción --</option>
+                    <option value="consulta" data-i18n="form.reasonGeneral">Consulta general</option>
+                    <option value="freelance" data-i18n="form.reasonWork">Proyecto / trabajo</option>
+                    <option value="otro" data-i18n="form.reasonOther">Otro</option>
                 </select>
-                <label for="mensaje">mensaje *</label>
-                <textarea name="mensaje" id="mensaje" placeholder="ej. me comunico a usted con la razon de:" required minlength="10"></textarea>
-                <label>
+                <label for="mensaje" data-i18n="form.message">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" data-i18n-placeholder="form.messagePh" placeholder="Contame en qué puedo ayudarte" required minlength="10"></textarea>
+                <label class="check-line">
                     <input type="checkbox" name="Terminos" required>
-                    Acepto los Terminos y condiciones *
+                    <span data-i18n="form.terms">Acepto los términos y condiciones *</span>
                 </label>
-                <button type="submit">Enviar</button>
-                
+                <button type="submit" class="btn-outline" data-i18n="form.submit">Enviar</button>
             </form>
-
         </section>
-
     </main>
 
-    <footer>
-        <p>&copy;2026 Chocobar Antonio, Todo los derechos reservados</p>
-        <div class="redes">
-            <a href="https://github.com/Antony27c" target="_blank" aria-label="Github de Antonio">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.instagram.com/antony0.0_" target="_blank" aria-label="instagram de Antonio">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-        </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Antonio Chocobar</p>
+        <p class="credit">
+            <span data-i18n="footer.credit">Diseño inspirado en</span>
+            <a href="https://github.com/bchiang7/v4" target="_blank" rel="noopener">Brittany Chiang</a>
+            ·
+            <a href="https://github.com/andresjosehr/andresjosehr-portfolio" target="_blank" rel="noopener">José Andrés</a>
+        </p>
     </footer>
-    
+    <script src="vendor/aos.js"></script>
+    <script src="app.js?v=4"></script>
 </body>
 </html>

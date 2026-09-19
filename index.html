@@ -1,145 +1,311 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <meta name="description" content="Portfolio de Chocobar Antonio, estudiante de analista de sistemas y desarrollador de software">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Antonio Chocobar — desarrollador de software en Salta, Argentina. React, Python, FastAPI y productos web de punta a punta.">
+    <meta name="theme-color" content="#0a0814">
+    <title>Antonio Chocobar · Desarrollador de software</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <title>Mi pagina</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="vendor/animate.min.css">
+    <link rel="stylesheet" href="vendor/aos.css">
+    <link rel="stylesheet" href="style.css?v=3">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+                }
+                document.documentElement.setAttribute("data-theme", theme);
+                var lang = localStorage.getItem("lang") || "es";
+                document.documentElement.setAttribute("lang", lang);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div class="layout">
-        <header>
-        <div class="logo">
-            <h1>Chocobar Antonio</h1>
-            <p>Estudiante de la tecnicatura superior de analista de sistemas y desarrollador de software</p>
-        </div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#Aptitudes">Aptitudes</a>
-            <a href="#Proyectos">Proyectos</a>
-            <a href="Contacto.html">Contacto</a>
+    <a class="skip-link" href="#inicio" data-i18n="skip">Saltar al contenido</a>
+
+    <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Antonio Chocobar">
+            <svg class="logo" viewBox="0 0 84 96" aria-hidden="true">
+                <polygon points="42,4 80,26 80,70 42,92 4,70 4,26" fill="none" stroke="currentColor" stroke-width="4"></polygon>
+                <text x="42" y="58" text-anchor="middle" font-size="32" font-family="Inter, sans-serif" font-weight="600" fill="currentColor">A</text>
+            </svg>
+        </a>
+        <nav class="nav" id="site-nav" data-nav>
+            <ol>
+                <li><a href="#sobre-mi"><span>01.</span> <em data-i18n="nav.about">Sobre mí</em></a></li>
+                <li><a href="#experiencia"><span>02.</span> <em data-i18n="nav.experience">Experiencia</em></a></li>
+                <li><a href="#proyectos"><span>03.</span> <em data-i18n="nav.projects">Proyectos</em></a></li>
+                <li><a href="#contacto"><span>04.</span> <em data-i18n="nav.contact">Contacto</em></a></li>
+            </ol>
+            <a class="btn-outline" href="https://github.com/Antony27c" target="_blank" rel="noopener" data-i18n="nav.resume">GitHub</a>
+            <div class="header-tools">
+                <div class="lang-switch" role="group" aria-label="Idioma">
+                    <button type="button" class="lang-btn is-active" data-lang-btn="es" aria-pressed="true" aria-label="Español">
+                        <svg class="flag" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="36" height="24" rx="3" fill="#74ACDF"/>
+                            <rect y="8" width="36" height="8" fill="#fff"/>
+                            <circle cx="18" cy="12" r="3.1" fill="#F6B40E"/>
+                            <circle cx="18" cy="12" r="1.55" fill="#85340A"/>
+                            <circle cx="18" cy="12" r="1" fill="#F6B40E"/>
+                        </svg>
+                        ES
+                    </button>
+                    <button type="button" class="lang-btn" data-lang-btn="en" aria-pressed="false" aria-label="English">
+                        <svg class="flag" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="36" height="24" rx="3" fill="#fff"/>
+                            <rect x="15" width="6" height="24" fill="#CE1124"/>
+                            <rect y="9" width="36" height="6" fill="#CE1124"/>
+                        </svg>
+                        EN
+                    </button>
+                </div>
+                <button type="button" class="icon-btn" data-theme-toggle aria-label="Cambiar tema">
+                    <i class="fa-solid fa-moon" data-theme-icon></i>
+                </button>
+            </div>
         </nav>
-        </header>
+        <button type="button" class="icon-btn menu-btn" data-menu-toggle aria-expanded="false" aria-controls="site-nav">
+            <span class="sr-only" data-i18n="nav.menu">Menú</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
 
-        <aside class="sidebar">
-            <h3>Navegacion</h3>
-            <ul>
-                <li><a href="#Sobre-mi">Sobre mi</a></li>
-                <li><a href="#Aptitudes">Aptitudes</a></li>
-                <li><a href="#Proyectos">proyectos</a></li>
-            </ul>
-
-        </aside>
+    <aside class="side-rail side-left" aria-label="Redes">
+        <a href="https://github.com/Antony27c" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/antonio-chocobar-19525341b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/antony0.0_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:antoniochocobar.sam@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+    </aside>
+    <aside class="side-rail side-right" aria-hidden="true">
+        <a href="mailto:antoniochocobar.sam@gmail.com">antoniochocobar.sam@gmail.com</a>
+    </aside>
 
     <main>
-
         <section id="inicio" class="hero">
-            <div class="hero-contenido">
-                <h1>Chocobar Antonio</h1>
-                <p class="hero-titulo">desarrollador Web Junior</p>
-                <a href="#Proyectos" class="hero-btn">Ver proyectos</a>
-            </div>
+            <p class="hero-hi animate__animated animate__fadeInDown" data-i18n="hero.hi">Hola! Mi nombre es</p>
+            <h1 class="hero-name animate__animated animate__fadeInUp">Antonio Chocobar.</h1>
+            <h2 class="hero-role animate__animated animate__fadeInUp" data-i18n="hero.role">Desarrollador de software</h2>
+            <p class="hero-lead animate__animated animate__fadeIn" data-i18n="hero.lead">
+                Construyo productos web de punta a punta: interfaces claras, APIs sólidas y soluciones que resuelven problemas reales. Escribo código limpio, reutilizable y con criterio, usando React, Python y FastAPI.
+            </p>
+            <a class="btn-outline hero-cta animate__animated animate__fadeInUp" href="#contacto" data-i18n="hero.ctaContact">Decime hola</a>
         </section>
 
-        <section id="Sobre-mi">
-            <div class="section-header">
-                <span class="badge">Practicas Profecionalizantes</span>
-                <h2>Sobre mi</h2>
-            </div>
-
-            <div class="sobre-grid">
-                <div class="sobre-texto">
-                    <p>Soy Antonio Chocobar, estudiante de la Tecnicatura Superior en Análisis de Sistemas. Me apasiona el desarrollo web y estoy en constante aprendizaje.</p>
+        <section id="sobre-mi" class="section" data-aos="fade-up">
+            <h2 class="section-title"><span>01.</span> <em data-i18n="about.title">Sobre mí</em></h2>
+            <div class="about-grid">
+                <div class="about-copy">
+                    <p data-i18n="about.p1">Soy técnico en Análisis de Sistemas y desarrollador de software en Salta, Argentina. Me gusta llevar ideas al deploy: tomo la iniciativa, documento lo que construyo y busco siempre el siguiente paso.</p>
+                    <p data-i18n="about.p2">Trabajo productos orientados a negocio, desde landings hasta sistemas con roles, APIs y bases de datos. También programo cosas para uso propio, por hobby o por utilidad.</p>
+                    <p data-i18n="about.p3">Algunas de las tecnologías con las que me formé y trabajo:</p>
+                    <ul class="tech-list">
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Python</li>
+                        <li>FastAPI</li>
+                        <li>PostgreSQL</li>
+                        <li>HTML &amp; CSS</li>
+                        <li>Git</li>
+                    </ul>
                 </div>
-                <div class="sobre-foto">
-                    <img src="Gemini_Generated_Image_mild7mild7mild7m.png" alt="Foto de perfil">
-                </div>
-            </div>
-
-            <p class="section-subtiulos">Lenguaje que estoy aprendiendo</p>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <span class="skill-icon">⚙️</span>
-                    <span class="skill-name">C</span>
-                    <span class="skill-level">Aprendiendo</span>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-icon">🐍</span>
-                    <span class="skill-name">Python</span>
-                    <span class="skill-level">Aprendiendo</span>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-icon">🌐</span>
-                    <span class="skill-name">HTML</span>
-                    <span class="skill-level">Aprendiendo</span>
-                </div>
-                <div class="skill-card">
-                    <span class="skill-icon">🎨</span>
-                    <span class="skill-name">CSS</span>
-                    <span class="skill-level">Aprendiendo</span>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="Aptitudes">
-            <p class="seccion-subtitulo">Mis aptitudes</p>
-            <div class="aptitudes-grid">
-                <div class="apt-card"><span class="apt-dot"></span>Escuchar</div>
-                <div class="apt-card"><span class="apt-dot"></span>Intentar hasta mejorar</div>
-                <div class="apt-card"><span class="apt-dot"></span>Asistencia</div>
-                <div class="apt-card"><span class="apt-dot"></span>Trabajo en equipo</div>
-            </div>
-        </section>
-
-        <section id="Proyectos">
-            <h2>Mis proyectos</h2>
-
-            <div class="Tarjetas">
-
-                <div class="Tarjeta">
-                    <h3>Proyectos N°1</h3>
-                    <p>Mi primer proyecto fue crear un portafolio de presentacion mostrando mis aptitudes y conocimientos</p>
-                </div>
-
-                <div class="Tarjeta">
-                    <h3>Proyecto N°2</h3>
-                    <p>Mi segundo proyecto va a ser aprender y usar apis</p>
-                </div>
-
-                <div class="Tarjeta">
-                    <h3>Proyecto N°3</h3>
-                    <p>Mi tercer proyecto es implementar chats bots</p>
-
-                </div>
-
-                <div class="Tarjeta">
-                    <h3>Proyecto N°4</h3>
-                    <p>Mi cuarto proyecto es aprender a consumir bases de datos SQL</p>
-
+                <div class="about-photo">
+                    <div class="photo-frame">
+                        <img src="https://avatars.githubusercontent.com/u/233409500?v=4" alt="Antonio Chocobar" width="300" height="300">
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section id="experiencia" class="section" data-aos="fade-up">
+            <h2 class="section-title"><span>02.</span> <em data-i18n="exp.title">Experiencia</em></h2>
+            <div class="jobs">
+                <div class="jobs-tabs" role="tablist">
+                    <button type="button" class="job-tab is-active" role="tab" data-job="formacion" aria-selected="true" data-i18n="exp.tab1">Formación</button>
+                    <button type="button" class="job-tab" role="tab" data-job="freelance" aria-selected="false" data-i18n="exp.tab2">Freelance</button>
+                    <button type="button" class="job-tab" role="tab" data-job="boxly" aria-selected="false">Boxly</button>
+                    <button type="button" class="job-tab" role="tab" data-job="arikiv" aria-selected="false">ViArkiv</button>
+                </div>
+                <div class="jobs-panels">
+                    <article class="job-panel" data-job-panel="formacion">
+                        <h3 data-i18n="exp.formacionTitle">Tec. Superior en Analista de Sistemas</h3>
+                        <p class="job-date" data-i18n="exp.formacionDate">En curso · Salta, Argentina</p>
+                        <ul>
+                            <li data-i18n="exp.formacion1">Desarrollo web, bases de datos y análisis de sistemas.</li>
+                            <li data-i18n="exp.formacion2">Prácticas profesionalizantes con metodologías ágiles (Scrum y Kanban).</li>
+                            <li data-i18n="exp.formacion3">Proyectos académicos en HTML, CSS, JavaScript, React, Python y C++.</li>
+                        </ul>
+                    </article>
+                    <article class="job-panel" data-job-panel="freelance" hidden>
+                        <h3 data-i18n="exp.freeTitle">Desarrollador freelance</h3>
+                        <p class="job-date" data-i18n="exp.freeDate">Abierto a proyectos · Remoto</p>
+                        <ul>
+                            <li data-i18n="exp.free1">Landings, web apps, APIs y MVPs de punta a punta.</li>
+                            <li data-i18n="exp.free2">Interfaces claras, documentación y entrega continua.</li>
+                            <li data-i18n="exp.free3">Disponible para freelance y oportunidades formales remotas.</li>
+                        </ul>
+                    </article>
+                    <article class="job-panel" data-job-panel="boxly" hidden>
+                        <h3 data-i18n="exp.boxlyTitle">Sistema de gestión · Boxly</h3>
+                        <p class="job-date">2026</p>
+                        <ul>
+                            <li data-i18n="exp.boxly1">Clientes, órdenes de trabajo, inventario, turnos y roles.</li>
+                            <li data-i18n="exp.boxly2">Stack React, FastAPI y PostgreSQL.</li>
+                            <li data-i18n="exp.boxly3">Producto pensado para el día a día de un taller mecánico.</li>
+                        </ul>
+                    </article>
+                    <article class="job-panel" data-job-panel="arikiv" hidden>
+                        <h3 data-i18n="exp.arikivTitle">Auditoría vial · ViArkiv</h3>
+                        <p class="job-date">2026</p>
+                        <ul>
+                            <li data-i18n="exp.arikiv1">App mobile-first de reportes inmutables para RN 51 / Eje del Litio.</li>
+                            <li data-i18n="exp.arikiv2">Reportes offline, IA y registro en blockchain.</li>
+                            <li data-i18n="exp.arikiv3">React + FastAPI, deploy en Railway.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section" data-aos="fade-up">
+            <h2 class="section-title"><span>03.</span> <em data-i18n="projects.title">Proyectos</em></h2>
+
+            <article class="featured">
+                <a class="featured-media" href="https://github.com/Antony27c/Boxly" target="_blank" rel="noopener">
+                    <img src="https://opengraph.githubassets.com/1/Antony27c/Boxly" alt="Boxly">
+                </a>
+                <div class="featured-body">
+                    <p class="featured-label" data-i18n="projects.featured">Proyecto destacado</p>
+                    <h3>Boxly</h3>
+                    <p class="featured-card" data-i18n="projects.boxly">Sistema de gestión para taller mecánico: clientes, órdenes, inventario, turnos y roles.</p>
+                    <ul class="featured-tech"><li>React</li><li>FastAPI</li><li>PostgreSQL</li></ul>
+                    <div class="featured-links">
+                        <a href="https://github.com/Antony27c/Boxly" target="_blank" rel="noopener" aria-label="GitHub Boxly"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="featured featured-alt">
+                <a class="featured-media" href="https://arikiv-production.up.railway.app" target="_blank" rel="noopener">
+                    <img src="https://opengraph.githubassets.com/1/Antony27c/Arikiv" alt="ViArkiv">
+                </a>
+                <div class="featured-body">
+                    <p class="featured-label" data-i18n="projects.featured">Proyecto destacado</p>
+                    <h3>ViArkiv</h3>
+                    <p class="featured-card" data-i18n="projects.arikiv">App mobile-first de auditoría vial inmutable: reportes offline, IA y blockchain.</p>
+                    <ul class="featured-tech"><li>React</li><li>FastAPI</li><li>IA</li></ul>
+                    <div class="featured-links">
+                        <a href="https://github.com/Antony27c/Arikiv" target="_blank" rel="noopener" aria-label="GitHub ViArkiv"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://arikiv-production.up.railway.app" target="_blank" rel="noopener" aria-label="Demo ViArkiv"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="featured">
+                <a class="featured-media" href="https://la-santisima-vineria.vercel.app" target="_blank" rel="noopener">
+                    <img src="https://opengraph.githubassets.com/1/Antony27c/La-Santisima-Vineria" alt="La Santísima Vinería">
+                </a>
+                <div class="featured-body">
+                    <p class="featured-label" data-i18n="projects.featured">Proyecto destacado</p>
+                    <h3>La Santísima Vinería</h3>
+                    <p class="featured-card" data-i18n="projects.vineria">Landing institucional para una vinería de Salta: catálogo, ubicación y contacto.</p>
+                    <ul class="featured-tech"><li>React</li><li>Vite</li><li>CSS</li></ul>
+                    <div class="featured-links">
+                        <a href="https://github.com/Antony27c/La-Santisima-Vineria" target="_blank" rel="noopener" aria-label="GitHub Vinería"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://la-santisima-vineria.vercel.app" target="_blank" rel="noopener" aria-label="Demo Vinería"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="mas-proyectos" class="section" data-aos="fade-up">
+            <h2 class="section-title center"><span>04.</span> <em data-i18n="other.title">Más proyectos</em></h2>
+            <div class="other-grid">
+                <article class="other-card">
+                    <div class="other-top">
+                        <i class="fa-regular fa-folder other-folder"></i>
+                        <div class="other-links">
+                            <a href="https://github.com/Antony27c/NOA-Pay" target="_blank" rel="noopener" aria-label="NOA Pay"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>NOA Pay</h3>
+                    <p data-i18n="projects.noapay">SDK de pagos y dashboard asociado para un proveedor de cobros.</p>
+                    <ul><li>TypeScript</li><li>HTML</li></ul>
+                </article>
+                <article class="other-card">
+                    <div class="other-top">
+                        <i class="fa-regular fa-folder other-folder"></i>
+                        <div class="other-links">
+                            <a href="https://github.com/Antony27c/Caja_Fuerte" target="_blank" rel="noopener" aria-label="Caja Fuerte"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>Caja Fuerte</h3>
+                    <p data-i18n="projects.caja">Proyecto en C++ para practicar lógica, estructuras y control de acceso.</p>
+                    <ul><li>C++</li></ul>
+                </article>
+                <article class="other-card">
+                    <div class="other-top">
+                        <i class="fa-regular fa-folder other-folder"></i>
+                        <div class="other-links">
+                            <a href="https://github.com/Antony27c/e-commerce" target="_blank" rel="noopener" aria-label="E-commerce"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>E-commerce</h3>
+                    <p data-i18n="projects.ecom">Proyecto final de tienda online: catálogo, interfaz y flujo de compra.</p>
+                    <ul><li>HTML</li><li>CSS</li></ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="section contact-block" data-aos="fade-up">
+            <p class="contact-kicker"><span>05.</span> <em data-i18n="contact.eyebrow">¿Y ahora?</em></p>
+            <h2 data-i18n="contact.title">Decime hola</h2>
+            <p data-i18n="contact.lead">¿Tenés un proyecto, una idea o una vacante? Escribime y te respondo apenas vea el mensaje.</p>
+            <form class="contact-form" action="https://formspree.io/f/xjgplbrb" method="POST">
+                <label for="name" data-i18n="form.name">Nombre completo *</label>
+                <input type="text" id="name" name="name" data-i18n-placeholder="form.namePh" placeholder="Ej. Juan Pérez" required minlength="3">
+                <label for="email" data-i18n="form.email">Email *</label>
+                <input type="email" id="email" name="email" data-i18n-placeholder="form.emailPh" placeholder="ej. hola@correo.com" required>
+                <label for="number" data-i18n="form.phone">Teléfono *</label>
+                <input type="tel" id="number" name="telefono" data-i18n-placeholder="form.phonePh" placeholder="ej. 387000000" pattern="[0-9]{7,15}" required>
+                <label for="residencia" data-i18n="form.city">Residencia *</label>
+                <input type="text" id="residencia" name="residencia" data-i18n-placeholder="form.cityPh" placeholder="Salta Capital" required minlength="5">
+                <label for="motivo" data-i18n="form.reason">Motivo *</label>
+                <select id="motivo" name="motivo" required>
+                    <option value="" data-i18n="form.reasonEmpty">-- Seleccioná una opción --</option>
+                    <option value="consulta" data-i18n="form.reasonGeneral">Consulta general</option>
+                    <option value="freelance" data-i18n="form.reasonWork">Proyecto / trabajo</option>
+                    <option value="otro" data-i18n="form.reasonOther">Otro</option>
+                </select>
+                <label for="mensaje" data-i18n="form.message">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" data-i18n-placeholder="form.messagePh" placeholder="Contame en qué puedo ayudarte" required minlength="10"></textarea>
+                <label class="check-line">
+                    <input type="checkbox" name="Terminos" required>
+                    <span data-i18n="form.terms">Acepto los términos y condiciones *</span>
+                </label>
+                <button type="submit" class="btn-outline" data-i18n="form.submit">Enviar</button>
+            </form>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy;2026 Chocobar Antonio, Todo los derechos reservados</p>
-        <div class="redes">
-            <a href="https://github.com/Antony27c" target="_blank" aria-label="Github de Antonio">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.instagram.com/antony0.0_" target="_blank" aria-label="instagram de Antonio">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-        </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Antonio Chocobar</p>
+        <p class="credit">
+            <span data-i18n="footer.credit">Diseño inspirado en</span>
+            <a href="https://github.com/bchiang7/v4" target="_blank" rel="noopener">Brittany Chiang</a>
+            ·
+            <a href="https://github.com/andresjosehr/andresjosehr-portfolio" target="_blank" rel="noopener">José Andrés</a>
+        </p>
     </footer>
-    </div>
+
+    <script src="vendor/aos.js"></script>
+    <script src="app.js?v=4"></script>
 </body>
 </html>
