@@ -359,8 +359,8 @@ main {
 
 @media (max-width: 900px) {
   main { width: min(var(--max), calc(100% - 40px)); }
-  .hero { flex-direction: column; justify-content: center; align-items: flex-start; }
-  .hero-photo { margin-top: 36px; width: min(260px, 65vw); }
+  .hero { gap: 24px; }
+  .hero-photo { width: clamp(110px, 32vw, 280px); }
   .jobs, .featured, .featured-alt, .other-grid {
     grid-template-columns: 1fr;
   }
@@ -387,7 +387,7 @@ main {
   .nav ol { flex-direction: column; font-size: 16px; }
   .nav a { font-size: 16px; }
   .nav .btn-outline { width: fit-content; }
-  .header-tools { flex-wrap: wrap; justify-content: center; }
+  .header-tools { margin-left: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {

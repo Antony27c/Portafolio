@@ -71,39 +71,39 @@ export default function Navbar() {
         >
           {t("nav.resume")}
         </a>
-        <div className="header-tools">
-          <div className="lang-switch" role="group" aria-label="Idioma">
-            <button
-              type="button"
-              className={`lang-btn${lang === "es" ? " is-active" : ""}`}
-              aria-pressed={lang === "es"}
-              aria-label="Español"
-              onClick={() => setLang("es")}
-            >
-              <FlagEs />
-              ES
-            </button>
-            <button
-              type="button"
-              className={`lang-btn${lang === "en" ? " is-active" : ""}`}
-              aria-pressed={lang === "en"}
-              aria-label="English"
-              onClick={() => setLang("en")}
-            >
-              <FlagEn />
-              EN
-            </button>
-          </div>
+      </nav>
+      <div className="header-tools">
+        <div className="lang-switch" role="group" aria-label="Idioma">
           <button
             type="button"
-            className="icon-btn"
-            aria-label={theme === "dark" ? t("theme.toLight") : t("theme.toDark")}
-            onClick={(e) => toggleTheme(e.currentTarget)}
+            className={`lang-btn${lang === "es" ? " is-active" : ""}`}
+            aria-pressed={lang === "es"}
+            aria-label="Español"
+            onClick={() => setLang("es")}
           >
-            <i className={theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i>
+            <FlagEs />
+            ES
+          </button>
+          <button
+            type="button"
+            className={`lang-btn${lang === "en" ? " is-active" : ""}`}
+            aria-pressed={lang === "en"}
+            aria-label="English"
+            onClick={() => setLang("en")}
+          >
+            <FlagEn />
+            EN
           </button>
         </div>
-      </nav>
+        <button
+          type="button"
+          className="icon-btn"
+          aria-label={theme === "dark" ? t("theme.toLight") : t("theme.toDark")}
+          onClick={(e) => toggleTheme(e.currentTarget)}
+        >
+          <i className={theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i>
+        </button>
+      </div>
       <button
         type="button"
         className="icon-btn menu-btn"
