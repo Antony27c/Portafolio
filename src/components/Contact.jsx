@@ -1,10 +1,11 @@
 import { useLanguage } from "../context/LanguageContext";
+import Reveal from "./Reveal";
 
 export default function Contact() {
   const { t } = useLanguage();
 
   return (
-    <section id="contacto" className="section contact-block" data-aos="fade-up">
+    <Reveal as="section" id="contacto" className="section contact-block">
       <p className="contact-kicker">
         <span>05.</span> <em>{t("contact.eyebrow")}</em>
       </p>
@@ -69,6 +70,6 @@ export default function Contact() {
           {t("form.submit")}
         </button>
       </form>
-    </section>
+    </Reveal>
   );
 }

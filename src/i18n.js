@@ -1,6 +1,5 @@
 export const translations = {
   es: {
-    skip: "Saltar al contenido",
     "nav.about": "Sobre mí",
     "nav.experience": "Experiencia",
     "nav.projects": "Proyectos",
@@ -65,14 +64,12 @@ export const translations = {
     "form.messagePh": "Contame en qué puedo ayudarte",
     "form.terms": "Acepto los términos y condiciones *",
     "form.submit": "Enviar",
-    "footer.credit": "Diseño inspirado en",
     "theme.toLight": "Cambiar a modo claro",
     "theme.toDark": "Cambiar a modo oscuro",
     "page.title": "Antonio Chocobar · Desarrollador de software",
     "page.contactTitle": "Contacto · Antonio Chocobar"
   },
   en: {
-    skip: "Skip to content",
     "nav.about": "About",
     "nav.experience": "Experience",
     "nav.projects": "Projects",
@@ -137,7 +134,6 @@ export const translations = {
     "form.messagePh": "Tell me how I can help",
     "form.terms": "I accept the terms and conditions *",
     "form.submit": "Send",
-    "footer.credit": "Design inspired by",
     "theme.toLight": "Switch to light mode",
     "theme.toDark": "Switch to dark mode",
     "page.title": "Antonio Chocobar · Software developer",

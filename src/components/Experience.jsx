@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import Reveal from "./Reveal";
 import { jobs } from "../data/experience";
 
 export default function Experience() {
@@ -7,7 +8,7 @@ export default function Experience() {
   const [activeJob, setActiveJob] = useState(jobs[0].id);
 
   return (
-    <section id="experiencia" className="section" data-aos="fade-up">
+    <Reveal as="section" id="experiencia" className="section">
       <h2 className="section-title">
         <span>02.</span> <em>{t("exp.title")}</em>
       </h2>
@@ -40,6 +41,6 @@ export default function Experience() {
           ))}
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 }

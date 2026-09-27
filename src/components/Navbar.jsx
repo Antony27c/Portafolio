@@ -52,27 +52,6 @@ export default function Navbar() {
 
   return (
     <header className="site-header">
-      <a className="brand" href="#inicio" aria-label="Antonio Chocobar">
-        <svg className="logo" viewBox="0 0 84 96" aria-hidden="true">
-          <polygon
-            points="42,4 80,26 80,70 42,92 4,70 4,26"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="4"
-          ></polygon>
-          <text
-            x="42"
-            y="58"
-            textAnchor="middle"
-            fontSize="32"
-            fontFamily="Inter, sans-serif"
-            fontWeight="600"
-            fill="currentColor"
-          >
-            A
-          </text>
-        </svg>
-      </a>
       <nav className={`nav${open ? " is-open" : ""}`} id="site-nav">
         <ol>
           {links.map((link) => (
@@ -119,7 +98,7 @@ export default function Navbar() {
             type="button"
             className="icon-btn"
             aria-label={theme === "dark" ? t("theme.toLight") : t("theme.toDark")}
-            onClick={toggleTheme}
+            onClick={(e) => toggleTheme(e.currentTarget)}
           >
             <i className={theme === "light" ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i>
           </button>

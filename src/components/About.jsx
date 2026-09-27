@@ -1,11 +1,12 @@
 import { useLanguage } from "../context/LanguageContext";
+import Reveal from "./Reveal";
 import Skills from "./Skills";
 
 export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="sobre-mi" className="section" data-aos="fade-up">
+    <Reveal as="section" id="sobre-mi" className="section">
       <h2 className="section-title">
         <span>01.</span> <em>{t("about.title")}</em>
       </h2>
@@ -16,17 +17,7 @@ export default function About() {
           <p>{t("about.p3")}</p>
           <Skills />
         </div>
-        <div className="about-photo">
-          <div className="photo-frame">
-            <img
-              src="https://avatars.githubusercontent.com/u/233409500?v=4"
-              alt="Antonio Chocobar"
-              width="300"
-              height="300"
-            />
-          </div>
-        </div>
       </div>
-    </section>
+    </Reveal>
   );
 }
