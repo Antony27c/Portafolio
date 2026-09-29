@@ -374,6 +374,10 @@ main {
   .job-tab.is-active { border-bottom-color: var(--green); }
 }
 
+@media (max-width: 640px) {
+  .hero-name, .hero-role { font-size: clamp(24px, 7.5vw, 36px); }
+}
+
 @media (max-width: 1079px) {
   .site-header { padding: 0 22px; backdrop-filter: none; background: var(--navy); }
   .menu-btn { display: grid; place-items: center; position: relative; z-index: 36; }
