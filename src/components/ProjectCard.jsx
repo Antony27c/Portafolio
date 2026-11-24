@@ -1,4 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
+import Icon from "./Icon";
+import ProjectLinks from "./ProjectLinks";
 
 export default function ProjectCard({ project }) {
   const { t } = useLanguage();
@@ -6,19 +8,8 @@ export default function ProjectCard({ project }) {
   return (
     <article className="other-card">
       <div className="other-top">
-        <i className="fa-regular fa-folder other-folder"></i>
-        <div className="other-links">
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener"
-              aria-label={project.title}
-            >
-              <i className="fa-brands fa-github"></i>
-            </a>
-          )}
-        </div>
+        <Icon name="folder" className="other-folder" />
+        <ProjectLinks project={project} className="other-links" />
       </div>
       <h3>{project.title}</h3>
       <p>{t(project.descriptionKey)}</p>

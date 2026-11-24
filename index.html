@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Antonio Chocobar — desarrollador de software en Salta, Argentina. React, Python, FastAPI y productos web de punta a punta.">
+    <meta name="description" content="Portafolio de Antonio Chocobar — desarrollador full stack en Salta, Argentina. Python, React/Next.js, datos e IA. Tres premios en hackathons en 2026.">
     <meta name="theme-color" content="#0a0814">
-    <title>Antonio Chocobar · Desarrollador de software</title>
+    <title>Antonio Chocobar · Desarrollador Full Stack</title>
+    <link rel="icon" type="image/svg+xml" href="/Portafolio/favicon.svg">
+    <link rel="canonical" href="https://antony27c.github.io/Portafolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://antony27c.github.io/Portafolio/">
+    <meta property="og:title" content="Antonio Chocobar · Desarrollador Full Stack">
+    <meta property="og:description" content="Python, React/Next.js, datos e IA. Tres premios en hackathons en 2026. Disponible para trabajo remoto o freelance.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/233409500?v=4">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script>
         (function () {
             try {
@@ -21,10 +29,71 @@
                 var lang = localStorage.getItem("lang") || "es";
                 document.documentElement.setAttribute("lang", lang);
             } catch (e) {}
+            document.documentElement.classList.add("is-loading");
         })();
     </script>
+    <style>
+        #loader {
+            --l-bg: #0a0814; --l-accent: #c084fc; --l-muted: #a89bb8;
+            position: fixed; inset: 0; z-index: 200000;
+            display: grid; place-items: center;
+            background: var(--l-bg);
+            transition: opacity .5s ease, visibility .5s ease;
+        }
+        html[data-theme="light"] #loader { --l-bg: #f6f0fc; --l-accent: #7c3aed; --l-muted: #6b4f8a; }
+        html.is-loading body { overflow: hidden; }
+        #loader.is-done { opacity: 0; visibility: hidden; }
+        #loader.is-done .loader-inner { transform: scale(.85); }
+        .loader-inner {
+            display: grid; justify-items: center; gap: 22px;
+            transition: transform .5s cubic-bezier(.645,.045,.355,1);
+        }
+        .loader-logo { width: 104px; height: 114px; overflow: visible; }
+        .loader-hex, .loader-glyph {
+            fill: none; stroke: var(--l-accent); stroke-width: 3.4;
+            stroke-linecap: round; stroke-linejoin: round;
+            stroke-dasharray: 1; stroke-dashoffset: 1;
+        }
+        .loader-hex { animation: loader-draw .9s cubic-bezier(.645,.045,.355,1) forwards; }
+        .loader-glyph { animation: loader-draw .5s ease-out forwards; }
+        .loader-glyph.g1, .loader-glyph.g2 { animation-delay: .7s; }
+        .loader-glyph.g3 { animation-delay: .95s; animation-duration: .6s; }
+        .loader-glow {
+            fill: var(--l-accent); opacity: 0;
+            animation: loader-glow 1.6s ease-in-out 1.1s infinite;
+        }
+        .loader-bar {
+            width: 120px; height: 2px; border-radius: 2px; overflow: hidden;
+            background: color-mix(in srgb, var(--l-muted) 25%, transparent);
+        }
+        .loader-bar::after {
+            content: ""; display: block; width: 40%; height: 100%; border-radius: inherit;
+            background: var(--l-accent);
+            animation: loader-slide 1.1s ease-in-out infinite;
+        }
+        @keyframes loader-draw { to { stroke-dashoffset: 0; } }
+        @keyframes loader-glow { 0%, 100% { opacity: 0; } 50% { opacity: .12; } }
+        @keyframes loader-slide { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+        html.is-loading .anim { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) {
+            .loader-hex, .loader-glyph { animation: none; stroke-dashoffset: 0; }
+            .loader-glow, .loader-bar::after { animation: none; }
+        }
+    </style>
 </head>
 <body>
+    <div id="loader" role="status" aria-label="Cargando">
+        <div class="loader-inner">
+            <svg class="loader-logo" viewBox="10 6 80 88" aria-hidden="true">
+                <path class="loader-glow" d="M50 12 83.5 31v38L50 88 16.5 69V31z" />
+                <path class="loader-hex" pathLength="1" d="M50 12 83.5 31v38L50 88 16.5 69V31z" />
+                <path class="loader-glyph g1" pathLength="1" d="M33 42 22.5 50.4 33 58.8" />
+                <path class="loader-glyph g2" pathLength="1" d="M67 42 77.5 50.4 67 58.8" />
+                <path class="loader-glyph g3" pathLength="1" d="M34 54.6 39 48.8 42.2 52 50 40.6 57.8 52 61 48.8 66 54.6" />
+            </svg>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 </body>

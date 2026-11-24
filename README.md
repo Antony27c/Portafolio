@@ -1,34 +1,31 @@
-# Trabajo Practico 1
+# Antonio Chocobar · Portafolio
 
-**Nombre Complreto** Antonio Chocobar
-**Numero de tp:** 1
-**Fecha:** 16/03/2026
+Portafolio personal de Antonio Chocobar, desarrollador full stack (Python, React/Next.js, datos e IA) en Salta, Argentina.
 
-## Description del sitio web
-Es un sitio web personal creado porque estabamos armando nuestro portafolio. Incluye informacion sobre mi, aptitudes y mis proyectos.
+**Sitio en vivo:** https://antony27c.github.io/Portafolio/
 
-## Tecnologias Usadas
-- HTML5
-- CSS
-- Flexbox
-- CSS Grid
-- Responsive Design
+![Vista de escritorio](docs/desktop.png)
 
-##  Link del sitio
-[Ver sitio en vivo](https://antony27c.github.io/Portafolio/)
+## Características
+- Bilingüe (español / inglés) y modo claro / oscuro.
+- Secciones: sobre mí, experiencia y logros, proyectos destacados, más proyectos y contacto.
+- Formulario de contacto con Formspree, enviado sin salir del sitio.
+- CV descargable en PDF.
+- Responsive, accesible por teclado y respeta `prefers-reduced-motion`.
 
-## Capturas de pantallas 
-### Mobile (393px)
-![mobile](capturas/mobile.png.png)
+## Tecnologías
+- React 19 + Vite
+- CSS propio (sin frameworks), íconos SVG inline
+- Deploy automático a GitHub Pages con GitHub Actions
 
-### Tablet (820px)
-![tablet](capturas/tablet.png.png)
+## Desarrollo
+```bash
+npm install
+npm run dev     # servidor local en http://localhost:5173/Portafolio/
+npm run build   # build de producción en dist/
+```
 
-### Computadora (1024px)
-![computadora](capturas/computadora.png.png)
+Los textos están en `src/i18n.js` y el contenido (proyectos, experiencia, habilidades, redes) en `src/data/`.
 
-## Ruta de instalacion de Git
-c:\Program files\git\cmd\git.exe
-
-# Reflexion 
-Durante la creacion de mi sitio we aprendi que la terminal llega a ser mas eficiente. Al principio me  parecia complicado y no entendia para que servia si podira crear carpeta y archivos con el mouse. Mientra fui creando mi sitio web me di cuenta que con unos pocos comandos podia hacer lo mismo pero mucho mas rapido.Creo que aunque la interfaz grafica es mas intuitiva, la terminal te da mas control y precision sobre lo que haces. 
+## Mobile
+<img src="docs/mobile.png" alt="Vista mobile" width="320">

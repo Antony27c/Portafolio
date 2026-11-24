@@ -1,5 +1,19 @@
 export const jobs = [
   {
+    id: "logros",
+    tabKey: "exp.tabAwards",
+    titleKey: "exp.awardsTitle",
+    date: "2026",
+    pointKeys: ["exp.awards1", "exp.awards2", "exp.awards3"],
+  },
+  {
+    id: "liderazgo",
+    tabKey: "exp.tabLead",
+    titleKey: "exp.leadTitle",
+    date: "2026",
+    pointKeys: ["exp.lead1", "exp.lead2", "exp.lead3"],
+  },
+  {
     id: "formacion",
     tabKey: "exp.tab1",
     titleKey: "exp.formacionTitle",
@@ -12,19 +26,5 @@ export const jobs = [
     titleKey: "exp.freeTitle",
     dateKey: "exp.freeDate",
     pointKeys: ["exp.free1", "exp.free2", "exp.free3"],
-  },
-  {
-    id: "boxly",
-    tab: "Boxly",
-    titleKey: "exp.boxlyTitle",
-    date: "2026",
-    pointKeys: ["exp.boxly1", "exp.boxly2", "exp.boxly3"],
-  },
-  {
-    id: "arikiv",
-    tab: "ViArkiv",
-    titleKey: "exp.arikivTitle",
-    date: "2026",
-    pointKeys: ["exp.arikiv1", "exp.arikiv2", "exp.arikiv3"],
   },
 ];
